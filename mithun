@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage("compile"){
+            steps{
+            echo "this is comple stage"
+            }
+        }
+   stage("build"){
+            steps{
+            echo "this is build stage"
+            emailext body: 'Hello World', subject: 'Test', to: 'mithunec@gmail.com'
+            }
+    }    }
+}
